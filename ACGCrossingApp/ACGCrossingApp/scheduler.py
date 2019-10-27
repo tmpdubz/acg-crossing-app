@@ -1,5 +1,10 @@
 import time
-
+'''
+some good an easy docmentation to use 
+https://github.com/jarekwg/django-apscheduler
+https://medium.com/@kevin.michael.horan/scheduling-tasks-in-django-with-the-advanced-python-scheduler-663f17e868e6
+https://apscheduler.readthedocs.io/en/latest/userguide.html#starting-the-scheduler
+'''
 from apscheduler.schedulers.background import BackgroundScheduler
 from django_apscheduler.jobstores import DjangoJobStore, register_events, register_job
 
