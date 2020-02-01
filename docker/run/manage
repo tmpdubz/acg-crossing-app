@@ -4,7 +4,19 @@ APP="$(git rev-parse --show-toplevel)/ACGCrossingApp"
 echo "${APP} will be mounted to /live-app directory"
 
 echo "Running ${APP}"
-docker run \
+
+# winpty will need to be prepended to "docker" in able for script to work on windows
+function runDocker() {
+    if command -v winpty &> /dev/null; then
+        winpty "$@"
+    else
+        "$@"
+    fi
+}
+
+# if [ expr substr $(uname -s) 1 10 ]; then 
+
+winpty docker run \
     -it \
     -p 8000:8000 \
     --network=docker_crosswatch-dev \
